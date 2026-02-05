@@ -11,12 +11,20 @@ from vehicle.serliazers import CarSerializer, MotoSerializer, MilageSerializer, 
 
 
 class CarViewSet(viewsets.ModelViewSet):
+    """
+    Viewset for cars
+    """
+
     serializer_class = CarSerializer
     queryset = Car.objects.all()
     permission_classes = [AllowAny]
 
 
 class MotoCreateAPIView(generics.CreateAPIView):
+    """
+    Moto create endpoint
+    """
+
     serializer_class = MotoCreateSerializer
     permission_classes = [IsAuthenticated]
 
